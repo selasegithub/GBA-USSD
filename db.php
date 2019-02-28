@@ -17,7 +17,7 @@
 		function init() {
 			// Create two tables, one to store the brands being voted on and their vote counts (brands) and one to store the people that have voted (voters).
 			$this->db->exec('CREATE TABLE IF NOT EXISTS brands (id INTEGER PRIMARY KEY, name TEXT, votes INTEGER);');
-			$this->db->exec('CREATE TABLE IF NOT EXISTS voters (id INTEGER PRIMARY KEY, phone_number TEXT, voted_for INTEGER);');
+			$this->db->exec('CREATE TABLE IF NOT EXISTS voters (id INTEGER PRIMARY KEY, phone_number TEXT, voted_for TEXT);');
 		}
 
 		function add_brand($name) {
@@ -64,7 +64,7 @@
 				$stmt->execute(array($phone_number, $voted_for));
 
 				// Update vote count
-				$stmt = $this->db->prepare('UPDATE brands SET votes = votes + 1 WHERE id=?');
+				$stmt = $this->db->prepare('UPDATE brands SET votes = votes + 1 WHERE voted_for=?');
 				$stmt->execute(array($voted_for));
 
 				return 'Thank you, your vote has been recorded';
