@@ -59,7 +59,7 @@
 
             // Check to see if person has already voted
             $stmt = $this->db->prepare('SELECT COUNT(*) FROM voters WHERE phone_number=?');
-            $stmt->bindParam(1, $phone_number, PDO::PARAM_INT);
+            $stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
             $stmt->execute();
 
             // If not, save their vote
@@ -67,13 +67,13 @@
             {
                 // Save voter
                 $stmt = $this->db->prepare('INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)');
-                $stmt->bindParam(1, $phone_number, PDO::PARAM_INT);
-                $stmt->bindParam(2, $voted_for, PDO::PARAM_INT);
+                $stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
+                $stmt->bindValue(2, $voted_for, PDO::PARAM_INT);
                 $stmt->execute();
 
                 // Update vote count
                 $stmt = $this->db->prepare('UPDATE brands SET votes = votes + 1 WHERE id=?');
-                $stmt->bindParam(1,$voted_for, PDO::PARAM_INT);
+                $stmt->bindValue(1,$voted_for, PDO::PARAM_INT);
                 $stmt->execute();
 
                 return 'Thank you, your vote has been recorded';
