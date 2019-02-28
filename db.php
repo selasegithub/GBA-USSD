@@ -58,7 +58,7 @@
             $phone_number = intval(preg_replace('/\D/', '', $phone_number));
 
             // Check to see if person has already voted
-            $stmt = $this->db->prepare('SELECT COUNT(*) FROM voters WHERE phone_number=?');
+            $stmt = $this->db->prepare("SELECT COUNT(*) FROM voters WHERE phone_number=?");
             $stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
             $stmt->execute();
 
@@ -66,13 +66,13 @@
             if ($stmt->fetchColumn() == 0)
             {
                 // Save voter
-                $stmt = $this->db->prepare('INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)');
+                $stmt = $this->db->prepare("INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)");
                 $stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
                 $stmt->bindValue(2, $voted_for, PDO::PARAM_INT);
                 $stmt->execute();
 
                 // Update vote count
-                $stmt = $this->db->prepare('UPDATE brands SET votes = votes + 1 WHERE id=?');
+                $stmt = $this->db->prepare("UPDATE brands SET votes = votes + 1 WHERE id=?");
                 $stmt->bindValue(1,$voted_for, PDO::PARAM_INT);
                 $stmt->execute();
 
