@@ -31,7 +31,7 @@ if ($ussdRequest != NULL)
 
             $ussdResponse->Message =
                 "Welcome to Ghana Beverage Awards 2019. Vote for your preferred product of the year.\n" .
-                "1. Origin Beer \n2. Club Beer \n3. Star Beer \n4. Guinness \n5. Gulder"  . $ussdRequest->Mobile;
+                "1. Origin Beer \n2. Club Beer \n3. Star Beer \n4. Guinness \n5. Gulder";
             $ussdResponse->Type = 'Response';
             break;
 
@@ -68,7 +68,7 @@ if ($ussdRequest != NULL)
                             $db = new DB();
 
                             // save_vote will check to see if the person has already voted
-                            $phone_number = $ussdRequest-> Mobile;
+                            $phone_number = $ussdRequest->Mobile;
                             $voted_for = $items[$ussdRequest->Message];
 
                             $response = $db->save_vote($phone_number, $voted_for);
