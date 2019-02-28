@@ -71,7 +71,7 @@ if ($ussdRequest != NULL)
                             $phone_number = $ussdRequest->Mobile;
 
                             //Return the array number for the selected vote to be used when updated votes
-                            $voted_for = array_search($ussdRequest->ClientState, $array) ;
+                            $voted_for = array_search($ussdRequest->ClientState, $items) ;
 
                             $response = $db->save_vote($phone_number, $voted_for);
                             //echo $response;
