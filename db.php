@@ -48,15 +48,22 @@
 			return $brands;
 		}
 
-		function save_vote($phone_number, $voted_for) {
+        /**
+         * @param $phone_number
+         * @param $voted_for
+         * @return string
+         */
+        function save_vote($phone_number, $voted_for) {
 			// Just the digits, please
 			$phone_number = preg_replace('/\D/', '', $phone_number);
 
 			// Check to see if person has already voted
 			$stmt = $this->db->prepare('SELECT COUNT(*) FROM voters WHERE phone_number=?');
-			$stmt->execute(array($phone_number));
+            $stmt->bind_param(int, $phone_number);
+            $stmt->execute();
+			//$stmt->execute(array($phone_number));
 
-			// If not, save their vote
+            // If not, save their vote
 			if ($stmt->fetchColumn() == 0)
 			{
 				// Save voter
