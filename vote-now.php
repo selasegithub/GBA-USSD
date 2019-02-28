@@ -31,7 +31,7 @@ if ($ussdRequest != NULL)
 
             $ussdResponse->Message =
                 "Welcome to Ghana Beverage Awards 2019. Vote for your preferred product of the year.\n" .
-                "1. Origin Beer \n2. Club Beer \n3. Star Beer \n4. Guinness \n5. Gulder"  . $ussdRequest[0];
+                "1. Origin Beer \n2. Club Beer \n3. Star Beer \n4. Guinness \n5. Gulder"  . $ussdRequest[0]->Mobile;
             $ussdResponse->Type = 'Response';
             break;
 
