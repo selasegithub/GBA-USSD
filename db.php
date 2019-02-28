@@ -54,6 +54,35 @@
          * @return string
          */
         function save_vote($phone_number, $voted_for) {
+            // Just the digits, please
+            $phone_number = intval(preg_replace('/\D/', '', $phone_number));
+
+            // Check to see if person has already voted
+            $stmt = $this->db->prepare('SELECT COUNT(*) FROM voters WHERE phone_number=?');
+            $stmt->bind_param('i',$phone_number);
+            $stmt->execute();
+
+            // If not, save their vote
+            if ($stmt->fetchColumn() == 0)
+            {
+                // Save voter
+                $stmt = $this->db->prepare('INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)');
+                $stmt->bind_param('ii',$phone_number,$voted_for); // we suppose tha rhe $voted_for is integer if not use intval
+                $stmt->execute();
+
+                // Update vote count
+                $stmt = $this->db->prepare('UPDATE brands SET votes = votes + 1 WHERE id=?');
+                $stmt->bind_param('i',$voted_for);// we suppose tha rhe $voted_for is integer if not use intval
+                $stmt->execute();
+
+                return 'Thank you, your vote has been recorded';
+            }
+            else {
+                return 'Sorry, you can only vote once.';
+            }
+        }
+        
+/*        function save_vote($phone_number, $voted_for) {
 			// Just the digits, please
 			$phone_number = preg_replace('/\D/', '', $phone_number);
 
@@ -79,5 +108,5 @@
 			else {
 				return 'Sorry, you can only vote once.';
 			}
-		}
+		}*/
 	}
