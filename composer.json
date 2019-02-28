@@ -2,6 +2,6 @@
 	
 	"require": {
         "ext-pdo_sqlite": "*"
-        "ext-json"
+        "ext-json": "*"
    }
 }
