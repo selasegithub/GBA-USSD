@@ -69,10 +69,10 @@ if ($ussdRequest != NULL)
 
                             // save_vote will check to see if the person has already voted
                             $phone_number = $ussdRequest->Mobile;
-                            $voted_for = $items[$ussdRequest->Message];
+                            $voted_for = $ussdRequest->ClientState;
 
                             $response = $db->save_vote($phone_number, $voted_for);
-                            echo $response;
+                            //echo $response;
 
                             //Display Success message after vote saved.
                             $ussdResponse->Message =
