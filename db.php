@@ -58,9 +58,27 @@
             $phone_number = intval(preg_replace('/\D/', '', $phone_number));
 
             // Check to see if person has already voted
-            $stmt = $this->db->prepare("SELECT COUNT(*) FROM voters WHERE phone_number=?");
-            $stmt->bindValue($phone_number, PDO::PARAM_INT);
-            $stmt->execute();
+            //$stmt = $this->db->prepare("SELECT COUNT(*) FROM voters WHERE phone_number=?");
+            //$stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
+            //$stmt->execute();
+
+            try{
+                $stmt = "SELECT COUNT(*) FROM voters WHERE phone_number=?";
+                $results = $this->$db->prepare($stmt);
+                $results->bindParam(1, $phone_number, PDO::PARAM_INT);
+                $results->execute();
+
+                //$query = "select * from $databaseTable where $field = :value";
+                //$results = $db->prepare($query);
+                //$results->bindParam(":value",$value,PDO::PARAM_STR);
+                //$results->execute();
+            }  catch (Exception $e)  {
+                echo $e;
+                die();
+            }
+
+            $values = $results->fetchAll(PDO::FETCH_OBJ);
+            echo $values;
 
             // If not, save their vote
             if ($stmt->fetchColumn() == 0)
