@@ -64,7 +64,7 @@
 
             try{
                 $stmt = "SELECT COUNT(*) FROM voters WHERE phone_number=?";
-                $results = $this->$db->prepare($stmt);
+                $results = $this->db->prepare($stmt);
                 $results->bindParam(1, $phone_number, PDO::PARAM_INT);
                 $results->execute();
 
