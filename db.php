@@ -59,7 +59,7 @@
 
             // Check to see if person has already voted
             $stmt = $this->db->prepare("SELECT COUNT(*) FROM voters WHERE phone_number=?");
-            $stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
+            $stmt->bindValue($phone_number, PDO::PARAM_INT);
             $stmt->execute();
 
             // If not, save their vote
