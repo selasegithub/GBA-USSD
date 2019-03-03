@@ -19,9 +19,12 @@
                 // Create two tables, one to store the brands being voted on and their vote counts (brands) and one to store the people that have voted (voters).
                 $this->db->exec('CREATE TABLE IF NOT EXISTS brands (id INTEGER PRIMARY KEY, name TEXT, votes INTEGER);');
                 $this->db->exec('CREATE TABLE IF NOT EXISTS voters (id INTEGER PRIMARY KEY, phone_number TEXT, voted_for INTEGER);');
+                echo "Table 'brands and voters' added to the database";
 
             } catch (PDOException $e){
+                $errors = $this->db->errorInfo();
                 echo $e;
+                echo $errors;
                 die();
             }
 
