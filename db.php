@@ -32,16 +32,16 @@
                 }
                 //Check to see if tables created
                 try{
-                    //Query brands table for all rows
-                    $results = "SELECT name, votes FROM brands";
+                    //Query voters table for all rows
+                    $results = "SELECT phone_number, voted_for FROM voters";
                     $rslts = $this->db->prepare($results);
 
                     //Verify execution of query
                     if($rslts->execute()){
-                        echo "You have successfully run select brands";
+                        echo "You have successfully run select on voters";
                         while ($row = $rslts->fetch(PDO::FETCH_ASSOC)){
-                            $names = $row['name'];
-                            $votes = $row['votes'];
+                            $names = $row['phone_number'];
+                            $votes = $row['voted_for'];
                         }
                         echo $names;
                         echo $votes;
