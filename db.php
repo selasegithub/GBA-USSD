@@ -21,8 +21,8 @@
                 $this->db->exec('CREATE TABLE IF NOT EXISTS voters (id INTEGER PRIMARY KEY, phone_number TEXT, voted_for INTEGER);');
                 echo "Table 'brands and voters' added to the database";
 
-                //Query voter table for all rows
-                $results = $this->db->prepare("SELECT title, body FROM voters");
+                //Query voters table for all rows
+                $results = $this->db->prepare("SELECT title, body FROM brands");
                 $results->execute();
 
                 while ($row = $results->fetch(PDO::FETCH_ASSOC)){
