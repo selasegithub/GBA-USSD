@@ -21,16 +21,40 @@
                 $this->db->exec('CREATE TABLE IF NOT EXISTS voters (id INTEGER PRIMARY KEY, phone_number TEXT, voted_for INTEGER);');
                 echo "Table 'brands and voters' added to the database";
 
-                //Query voters table for all rows
-                $results = $this->db->prepare("SELECT title, body FROM brands");
-                $results->execute();
+                //Try catch exception to check connection to Database.
+                try{
+                    $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    echo "Connected !";
 
-                while ($row = $results->fetch(PDO::FETCH_ASSOC)){
-                    $title = $row['title'];
-                    $body = $row['body'];
+                }  catch (PDOException $e)  {
+                    echo $e;
+                    die();
                 }
-                echo $title;
-                echo $body;
+                //Check to see if tables created
+                try{
+                    //Query brands table for all rows
+                    $results = "SELECT title, body FROM brands";
+                    $rslts = $this->db->prepare($results);
+
+                    //Verify execution of query
+                    if($rslts->execute()){
+                        echo "You have successfully run select brands";
+                        while ($row = $rslts->fetch(PDO::FETCH_ASSOC)){
+                            $title = $row['title'];
+                            $body = $row['body'];
+                        }
+                        echo $title;
+                        echo $body;
+                    }
+                    else {
+                        echo "There is some problem in table query";
+                    }
+
+                }  catch (PDOException $e)  {
+                    echo $e;
+                    die();
+                }
+
 
             } catch (PDOException $e){
                 $errors = $this->db->errorInfo();
