@@ -124,18 +124,34 @@
                 $results->bindParam(1, $phone_number, PDO::PARAM_INT);
 
                 //Verify execution of query
-                if($stmt->execute()){
-                    echo "You have successfully updated your profile";
+                if($results->execute()){
+                    echo "Voters Query executed";
+                    // If number not already voted, save their vote
+                    if ($results->fetchColumn() == 0)
+                    {
+                        // Save voter
+                        $stmt2 = "INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)";
+                        $stmt2query = $this->db->prepare($stmt2);
+                        $stmt2query->bindValue(1, $phone_number, PDO::PARAM_INT);
+                        $stmt2query->bindValue(2, $voted_for, PDO::PARAM_INT);
+                        $stmt2query->execute();
+
+                        // Update vote count
+                        $stmt3 = "UPDATE brands SET votes = votes + 1 WHERE id=?";
+                        $stmt3query = $this->db->prepare($stmt3);
+                        $stmt3query->bindValue(1,$voted_for, PDO::PARAM_INT);
+                        $stmt3query->execute();
+
+                        return 'Thank you, your vote has been recorded';
+                    }
+                    else {
+                        return 'Sorry, you can only vote once.';
+                    }
                 }
                 else {
                     echo "There is some problem in updating your profile. Please contact site admin";
                 }
-                //$results->execute();
 
-                //$query = "select * from $databaseTable where $field = :value";
-                //$results = $db->prepare($query);
-                //$results->bindParam(":value",$value,PDO::PARAM_STR);
-                //$results->execute();
             }  catch (PDOException $e)  {
                 echo $e;
                 die();
@@ -144,25 +160,6 @@
             $values = $results->fetchAll(PDO::FETCH_OBJ);
             echo $values;
 
-            // If not, save their vote
-            if ($stmt->fetchColumn() == 0)
-            {
-                // Save voter
-                $stmt = $this->db->prepare("INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)");
-                $stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
-                $stmt->bindValue(2, $voted_for, PDO::PARAM_INT);
-                $stmt->execute();
-
-                // Update vote count
-                $stmt = $this->db->prepare("UPDATE brands SET votes = votes + 1 WHERE id=?");
-                $stmt->bindValue(1,$voted_for, PDO::PARAM_INT);
-                $stmt->execute();
-
-                return 'Thank you, your vote has been recorded';
-            }
-            else {
-                return 'Sorry, you can only vote once.';
-            }
         }
 /*        function save_vote($phone_number, $voted_for) {
             // Just the digits, please
