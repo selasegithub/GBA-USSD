@@ -141,10 +141,10 @@
                         $stmt3query->bindValue(1,$voted_for, PDO::PARAM_INT);
                         $stmt3query->execute();
 
-                        //return 'Thank you, your vote has been recorded';
+                        return 'Thank you, your vote has been recorded';
                     }
                     else {
-                        //return 'Sorry, you can only vote once.';
+                        return 'Sorry, you can only vote once.';
                     }
                 }
                 else {

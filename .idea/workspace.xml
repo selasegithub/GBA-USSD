@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="23da16f0-b60c-4999-b82c-556dfdd88d51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote-now.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote-now.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+            <state relative-caret-position="464">
+              <caret line="143" column="72" lean-forward="true" selection-start-line="143" selection-start-column="72" selection-end-line="143" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -57,8 +56,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/setup.php" />
-        <option value="$PROJECT_DIR$/db.php" />
         <option value="$PROJECT_DIR$/vote-now.php" />
+        <option value="$PROJECT_DIR$/db.php" />
       </list>
     </option>
   </component>
@@ -120,12 +119,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551351042006</updated>
       <workItem from="1551351044236" duration="11755000" />
-      <workItem from="1551526408807" duration="10514000" />
+      <workItem from="1551526408807" duration="10622000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22269000" />
+    <option name="totallyTimeSpent" value="22377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="26" width="1400" height="837" extended-state="0" />
@@ -176,8 +175,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+        <state relative-caret-position="464">
+          <caret line="143" column="72" lean-forward="true" selection-start-line="143" selection-start-column="72" selection-end-line="143" selection-end-column="72" />
         </state>
       </provider>
     </entry>
