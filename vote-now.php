@@ -88,7 +88,7 @@ if ($ussdRequest != NULL)
                             $ussdResponse->Message = 'Vote cancelled.';
                             break;
                         default:
-                            $ussdResponse->Message = 'Invalid selection.';
+                            $ussdResponse->Message = 'Invalid selection or You can only vote once.';
                             break;
                     }
                     $ussdResponse->Type = "Release";
