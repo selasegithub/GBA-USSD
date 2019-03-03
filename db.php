@@ -62,17 +62,36 @@
             //$stmt->bindValue(1, $phone_number, PDO::PARAM_INT);
             //$stmt->execute();
 
+            //Try catch exception to check connection to Database.
+            try{
+                $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "Connected !";
+
+            }  catch (PDOException $e)  {
+                echo $e;
+                die();
+            }
+
+            //Check to see if person has already voted
             try{
                 $stmt = "SELECT COUNT(*) FROM voters WHERE phone_number=?";
                 $results = $this->db->prepare($stmt);
-                $results->bindParam(-1, $phone_number, PDO::PARAM_INT);
-                $results->execute();
+                $results->bindParam(1, $phone_number, PDO::PARAM_INT);
+
+                //Verify execution of query
+                if($stmt->execute()){
+                    echo "You have successfully updated your profile";
+                }
+                else {
+                    echo "There is some problem in updating your profile. Please contact site admin";
+                }
+                //$results->execute();
 
                 //$query = "select * from $databaseTable where $field = :value";
                 //$results = $db->prepare($query);
                 //$results->bindParam(":value",$value,PDO::PARAM_STR);
                 //$results->execute();
-            }  catch (Exception $e)  {
+            }  catch (PDOException $e)  {
                 echo $e;
                 die();
             }
