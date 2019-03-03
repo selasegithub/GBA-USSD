@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="23da16f0-b60c-4999-b82c-556dfdd88d51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/setup.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,15 +19,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+            <state relative-caret-position="198">
+              <caret line="20" column="133" selection-start-line="20" selection-start-column="133" selection-end-line="20" selection-end-column="133" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -48,6 +53,7 @@
       <list>
         <option value="$PROJECT_DIR$/vote-now.php" />
         <option value="$PROJECT_DIR$/db.php" />
+        <option value="$PROJECT_DIR$/setup.php" />
       </list>
     </option>
   </component>
@@ -57,8 +63,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="362" />
-    <option name="y" value="43" />
+    <option name="x" value="125" />
+    <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="837" />
   </component>
@@ -109,15 +115,15 @@
       <option name="presentableId" value="Default" />
       <updated>1551351042006</updated>
       <workItem from="1551351044236" duration="11755000" />
-      <workItem from="1551526408807" duration="3913000" />
+      <workItem from="1551526408807" duration="5501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15668000" />
+    <option name="totallyTimeSpent" value="17256000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="362" y="43" width="1400" height="837" extended-state="0" />
+    <frame x="125" y="23" width="1400" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533137" />
@@ -146,9 +152,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/setup.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/vote-now.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-206">
@@ -156,10 +159,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+        <state relative-caret-position="198">
+          <caret line="20" column="133" selection-start-line="20" selection-start-column="133" selection-end-line="20" selection-end-column="133" />
         </state>
       </provider>
     </entry>
