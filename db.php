@@ -33,18 +33,18 @@
                 //Check to see if tables created
                 try{
                     //Query brands table for all rows
-                    $results = "SELECT title, body FROM brands";
+                    $results = "SELECT name, votes FROM brands";
                     $rslts = $this->db->prepare($results);
 
                     //Verify execution of query
                     if($rslts->execute()){
                         echo "You have successfully run select brands";
                         while ($row = $rslts->fetch(PDO::FETCH_ASSOC)){
-                            $title = $row['title'];
-                            $body = $row['body'];
+                            $names = $row['name'];
+                            $votes = $row['votes'];
                         }
-                        echo $title;
-                        echo $body;
+                        echo $names;
+                        echo $votes;
                     }
                     else {
                         echo "There is some problem in table query";
