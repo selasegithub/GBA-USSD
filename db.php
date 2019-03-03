@@ -110,54 +110,55 @@
             //Try catch exception to check connection to Database.
             try{
                 $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connected !";
+                //echo "Connected !";
+                //Check to see if person has already voted
+                try{
+                    $stmt = "SELECT COUNT(*) FROM voters WHERE phone_number=?";
+                    $results = $this->db->prepare($stmt);
+                    $results->bindParam(1, $phone_number, PDO::PARAM_INT);
 
-            }  catch (PDOException $e)  {
-                echo $e;
-                die();
-            }
+                    //Verify execution of query
+                    if($results->execute()){
+                        // If number not already voted, save their vote
+                        if ($results->fetchColumn() == 0)
+                        {
+                            // Save voter
+                            $stmt2 = "INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)";
+                            $stmt2query = $this->db->prepare($stmt2);
+                            $stmt2query->bindValue(1, $phone_number, PDO::PARAM_INT);
+                            $stmt2query->bindValue(2, $voted_for, PDO::PARAM_INT);
+                            $stmt2query->execute();
 
-            //Check to see if person has already voted
-            try{
-                $stmt = "SELECT COUNT(*) FROM voters WHERE phone_number=?";
-                $results = $this->db->prepare($stmt);
-                $results->bindParam(1, $phone_number, PDO::PARAM_INT);
+                            // Update vote count
+                            $stmt3 = "UPDATE brands SET votes = votes + 1 WHERE id=?";
+                            $stmt3query = $this->db->prepare($stmt3);
+                            $stmt3query->bindValue(1,$voted_for, PDO::PARAM_INT);
+                            $stmt3query->execute();
 
-                //Verify execution of query
-                if($results->execute()){
-                    // If number not already voted, save their vote
-                    if ($results->fetchColumn() == 0)
-                    {
-                        // Save voter
-                        $stmt2 = "INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)";
-                        $stmt2query = $this->db->prepare($stmt2);
-                        $stmt2query->bindValue(1, $phone_number, PDO::PARAM_INT);
-                        $stmt2query->bindValue(2, $voted_for, PDO::PARAM_INT);
-                        $stmt2query->execute();
-
-                        // Update vote count
-                        $stmt3 = "UPDATE brands SET votes = votes + 1 WHERE id=?";
-                        $stmt3query = $this->db->prepare($stmt3);
-                        $stmt3query->bindValue(1,$voted_for, PDO::PARAM_INT);
-                        $stmt3query->execute();
-
-                        return 'Thank you, your vote has been recorded';
+                            return 'Thank you, your vote has been recorded';
+                        }
+                        else {
+                            return 'Sorry, you can only vote once.';
+                        }
                     }
                     else {
-                        return 'Sorry, you can only vote once.';
+                        return "There is some problem in updating your profile. Please contact site admin";
                     }
+
+                }  catch (PDOException $e)  {
+                    echo $e;
+                    die();
                 }
-                else {
-                    echo "There is some problem in updating your profile. Please contact site admin";
-                }
+
+                $values = $results->fetchAll(PDO::FETCH_OBJ);
+                echo $values;
+
 
             }  catch (PDOException $e)  {
                 echo $e;
                 die();
             }
 
-            $values = $results->fetchAll(PDO::FETCH_OBJ);
-            echo $values;
 
         }
 /*        function save_vote($phone_number, $voted_for) {
