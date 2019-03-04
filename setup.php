@@ -20,9 +20,9 @@
 	$db->add_brand('Star Beer');
     $db->add_brand('Guinness');
     $db->add_brand('Gulder');
-    $db->add_brand('Origin Beer1');
+    /*$db->add_brand('Origin Beer1');
     $db->add_brand('Club Beer1');
     $db->add_brand('Star Beer1');
     $db->add_brand('Guinness1');
-    $db->add_brand('Gulder1');
+    $db->add_brand('Gulder1');*/
 	echo 'Database created and brands added';
