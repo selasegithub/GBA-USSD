@@ -30,8 +30,8 @@ if ($ussdRequest != NULL)
         case 'Initiation':
 
             $ussdResponse->Message =
-                "Welcome to Ghana Beverage Awards 2019. Vote for your preferred product of the year.\n" .
-                "1. Origin Beer \n2. Club Beer \n3. Star Beer \n4. Guinness \n5. Gulder";
+                "Welcome to Ghana Beverage Awards 2018. Vote for your preferred product of the year.\n" .
+                "1. Origin Beer \n2. Club Beer \n3. Star Beer \n4. Guinness \n5. Gulder \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";
             $ussdResponse->Type = 'Response';
             break;
 
@@ -46,7 +46,7 @@ if ($ussdRequest != NULL)
                 // in a particular session, the Sequence will increase by 1.
                 // Sequence number 1 was that of the initiation request.
                 case 2:
-                    $items = array('1' => 'Origin Beer', '2' => 'Club Beer', '3' => 'Star Beer', '4' => 'Guinness', '5' => 'Gulder');
+                    $items = array('1' => 'Origin Beer', '2' => 'Club Beer', '3' => 'Star Beer', '4' => 'Guinness', '5' => 'Gulder', '6' => 'Origin Beer1', '7' => 'Club Beer1', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                     if (isset($items[$ussdRequest->Message])) {
                         $ussdResponse->Message = 'Please confirm your preferred product of the year is  '
                             . $items[$ussdRequest->Message] . "?\n1. Yes\n2. No";
@@ -71,7 +71,7 @@ if ($ussdRequest != NULL)
                             $phone_number = $ussdRequest->Mobile;
 
                             //Return the array number for the selected vote to be used when updated votes
-                            $items2 = array('1' => 'Origin Beer', '2' => 'Club Beer', '3' => 'Star Beer', '4' => 'Guinness', '5' => 'Gulder');
+                            $items2 = array('1' => 'Origin Beer', '2' => 'Club Beer', '3' => 'Star Beer', '4' => 'Guinness', '5' => 'Gulder', '6' => 'Origin Beer1', '7' => 'Club Beer1', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                             $voted_for = array_search($ussdRequest->ClientState, $items2) ;
 
                             $response = $db->save_vote($phone_number, $voted_for);
