@@ -77,10 +77,17 @@ if ($ussdRequest != NULL)
                             $response = $db->save_vote($phone_number, $voted_for);
                             //echo $response;
 
-                            //Display Success message after vote saved.
-                            $ussdResponse->Message =
-                                'Thank you. You have successfully voted for '
-                                . $ussdRequest->ClientState . ' as your preferred Product of the Year.';
+                            //Get Response
+                            if ($response === true){
+                                //Display Success message after vote saved.
+                                $ussdResponse->Message =
+                                    'Thank you. You have successfully voted for '
+                                    . $ussdRequest->ClientState . ' as your preferred Product of the Year.';
+                            }
+                            else {
+                                $ussdResponse->Message = 'Sorry you can only vote once.';
+                            }
+
 
 
                             break;
@@ -88,7 +95,7 @@ if ($ussdRequest != NULL)
                             $ussdResponse->Message = 'Vote cancelled.';
                             break;
                         default:
-                            $ussdResponse->Message = 'Invalid selection or You can only vote once.';
+                            $ussdResponse->Message = 'Invalid selection';
                             break;
                     }
                     $ussdResponse->Type = "Release";

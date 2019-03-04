@@ -135,14 +135,14 @@
                             $stmt3query->bindValue(1,$voted_for, PDO::PARAM_INT);
                             $stmt3query->execute();
 
-                            return 'Thank you, your vote has been recorded';
+                            return true; //'Thank you, your vote has been recorded';
                         }
                         else {
-                            return 'Sorry, you can only vote once.';
+                            return false; //'Sorry, you can only vote once.';
                         }
                     }
                     else {
-                        return "There is some problem in updating your profile. Please contact site admin";
+                        return false; //"There is some problem in updating your profile. Please contact site admin";
                     }
 
                 }  catch (PDOException $e)  {
@@ -150,8 +150,8 @@
                     die();
                 }
 
-                $values = $results->fetchAll(PDO::FETCH_OBJ);
-                echo $values;
+                //$values = $results->fetchAll(PDO::FETCH_OBJ);
+                //echo $values;
 
 
             }  catch (PDOException $e)  {
