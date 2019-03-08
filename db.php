@@ -175,7 +175,7 @@
             {
                 // Save voter
                 $stmt = $this->db->prepare('INSERT INTO voters (phone_number, voted_for) VALUES (?, ?)');
-                $stmt->bindParam('ii', $phone_number, $voted_for); // we suppose tha rhe $voted_for is integer if not use intval
+                $stmt->bindParam('ii', $phone_number, $voted_for); // we suppose tha rhe $voted_for is integer if not use interval
                 $stmt->execute();
 
                 // Update vote count

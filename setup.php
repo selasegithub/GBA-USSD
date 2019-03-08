@@ -15,11 +15,11 @@
 	$db->init();
 
 	// Add some teams
-	$db->add_brand('Origin Beer');
-	$db->add_brand('Club Beer');
-	$db->add_brand('Star Beer');
-    $db->add_brand('Guinness');
-    $db->add_brand('Gulder');
+	$db->add_brand('Kpoo Keke');
+	$db->add_brand('Vitamilk');
+	$db->add_brand('Bel Aqua Mineral Water');
+    $db->add_brand('Guinness Foreign Extra Stout');
+    $db->add_brand('Odehye3 Beer');
     /*$db->add_brand('Origin Beer1');
     $db->add_brand('Club Beer1');
     $db->add_brand('Star Beer1');
