@@ -30,8 +30,8 @@ if ($ussdRequest != NULL)
         case 'Initiation':
 
             $ussdResponse->Message =
-                "Vote for your preferred #GhBevAwards18 product of the year.\n" .
-                "1. Kpoo Keke \n2. Vitamilk \n3. Bel Aqua Mineral Water \n4. Guinness Foreign Extra Stout \n5. Odehye3 Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";
+                "Product of the year #GhBevAwards18 .\n" .
+                "1. Kpoo Keke \n2. Vitamilk \n3. Bel Aqua Mineral Water \n4. Guinness FES \n5. Odehye3 Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";
             $ussdResponse->Type = 'Response';
             break;
 
