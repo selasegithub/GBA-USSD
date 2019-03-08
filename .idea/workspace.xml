@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23da16f0-b60c-4999-b82c-556dfdd88d51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/setup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vote-now.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote-now.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,10 +15,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="552">
               <caret line="176" column="105" lean-forward="true" selection-start-line="176" selection-start-column="105" selection-end-line="176" selection-end-column="105" />
             </state>
           </provider>
@@ -35,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vote-now.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-251">
-              <caret line="73" column="176" selection-start-line="73" selection-start-column="176" selection-end-line="73" selection-end-column="176" />
+            <state relative-caret-position="392">
+              <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -53,8 +51,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/setup.php" />
-        <option value="$PROJECT_DIR$/vote-now.php" />
         <option value="$PROJECT_DIR$/db.php" />
+        <option value="$PROJECT_DIR$/vote-now.php" />
       </list>
     </option>
   </component>
@@ -116,12 +114,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551351042006</updated>
       <workItem from="1551351044236" duration="11755000" />
-      <workItem from="1551526408807" duration="18107000" />
+      <workItem from="1551526408807" duration="18302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29862000" />
+    <option name="totallyTimeSpent" value="30057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="26" width="1400" height="837" extended-state="0" />
@@ -156,13 +154,6 @@
     <entry file="file://$PROJECT_DIR$/vote-results.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/vote-now.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251">
-          <caret line="73" column="176" selection-start-line="73" selection-start-column="176" selection-end-line="73" selection-end-column="176" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -172,8 +163,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="552">
           <caret line="176" column="105" lean-forward="true" selection-start-line="176" selection-start-column="105" selection-end-line="176" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vote-now.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
         </state>
       </provider>
     </entry>
