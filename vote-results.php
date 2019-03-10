@@ -12,9 +12,21 @@
 	$brands = $db->get_brands();
 	echo '<ul>';
 
-	// Loop through each brand and display how many votes they got
+	/*// Loop through each brand and display how many votes they got
 	foreach ($brands as $brand)
     {
         echo '<li>'.$brand['name'].': '.$brand['votes'].' votes</li>';
-    }
+    }*/
 	echo '</ul>';
+
+    if (is_array($brands) || is_object($brands))
+    {
+        // Loop through each brand and display how many votes they got
+        foreach ($brands as $brand)
+        {
+            echo '<li>'.$brand['name'].': '.$brand['votes'].' votes</li>';
+        }
+    }
+    else{
+        echo "Results not an array";
+    }
