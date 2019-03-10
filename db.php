@@ -81,7 +81,7 @@
 		function get_brands() {
 			$result = $this->db->query('SELECT * FROM brands');
 
-			foreach ($result as $row)
+			/*foreach ($result as $row)
 			{
 				$brand['id'] = $row['id'];
 				$brand['name'] = $row['name'];
@@ -90,7 +90,49 @@
 				$brands[] = $brand;
 			}
 
-			return $brands;
+			return $brands;*/
+
+            if (is_array($result) || is_object($result))
+            {
+                foreach ($result as $row)
+                {
+                    $brand['id'] = $row['id'];
+                    $brand['name'] = $row['name'];
+                    $brand['votes'] = $row['votes'];
+
+                    $brands[] = $brand;
+                }
+
+                return $brands;
+            }
+            else{
+                echo "Results not an array";
+            }
+
+            /**
+             * Determine if a variable is iterable. i.e. can be used to loop over.
+             *
+             * @return bool
+             */
+            /*function is_iterable($var)
+            {
+                return $var !== null
+                    && (is_array($var)
+                        || $var instanceof Traversable
+                        || $var instanceof Iterator
+                        || $var instanceof IteratorAggregate
+                    );
+            }
+
+            $values = get_values();
+
+            if (is_iterable($values))
+            {
+                foreach ($values as $value)
+                {
+                    // do stuff...
+                }
+            }*/
 		}
 
         /**
