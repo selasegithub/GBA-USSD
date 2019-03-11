@@ -6,12 +6,35 @@
  * Time: 22:53
  */
 	class DB {
-		const DB_NAME = 'votes.sqlite';
+		const DB_NAME = 'postgresql-spherical-25858';
 
 		protected $db;
+        $host = "ec2-54-197-232-203.compute-1.amazonaws.com";
+        $user = "kdyztookkckndr";
+        $password = "29846ef8b03eecd8ac209177adab65a0c73f8b3c4b92de2276dcd010b4f69539";
+        $dbname = "dfr4hedmq20d1m";
+        $port = "5432";
+
 
 		function __construct() {
-			$this->db = new PDO('sqlite:'.self::DB_NAME);
+            try{
+                //Set data source name
+                //$this->db = new PDO('sqlite:'.self::DB_NAME);
+                $dsn = "pgsql:host=" . $host . ";port=" . $port . ";dbname=" . $dbname . ";user=" . $user . ";password=" . $password;
+
+                //Create a pdo instance
+                $this->db = new PDO($dsn, $user, $password);
+                $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+                $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+                $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+
+            }
+            catch (PDOException $e){
+                echo 'Connection failed: ' . $e->getMessage();
+            }
+			
+
 		}
 
 		function init() {
