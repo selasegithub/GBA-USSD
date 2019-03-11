@@ -43,7 +43,7 @@ $port = '5432';*/
             $user = 'kdyztookkckndr';
             $password = '29846ef8b03eecd8ac209177adab65a0c73f8b3c4b92de2276dcd010b4f69539';
             $dbname = 'dfr4hedmq20d1m';
-            $port = '5432';
+            $port = 5432;
 
             try{
                 //Set data source name
