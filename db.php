@@ -43,7 +43,7 @@ $port = '5432';*/
             $user = 'kdyztookkckndr';
             $password = '29846ef8b03eecd8ac209177adab65a0c73f8b3c4b92de2276dcd010b4f69539';
             $dbname = 'dfr4hedmq20d1m';
-            $port = 5432;
+            $port = '5432';
 
             try{
                 //Set data source name
@@ -57,7 +57,7 @@ $port = '5432';*/
                 $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);*/
 
 
-                $this->db = new PDO('pgsql:host=$host;dbname=$dbname;user=$user;port=$port;password=$password');
+                $this->db = new PDO('pgsql:host=$host;dbname=$dbname;user=$user;port=5432;password=$password');
 
 
             }
