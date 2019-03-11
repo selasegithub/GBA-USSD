@@ -9,7 +9,7 @@ date_default_timezone_set('Africa/Ghana');
 
 require_once('db.php');
 header('Content-type: application/json; charset=utf-8');
-header("Access-Control-Allow-Origin: http://apps.smsgh.com");
+header("Access-Control-Allow-Origin: http://apps.smsgh.com", false);
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 
 
