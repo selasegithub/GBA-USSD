@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23da16f0-b60c-4999-b82c-556dfdd88d51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vote-now.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote-now.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="269" column="42" lean-forward="true" selection-start-line="269" selection-start-column="42" selection-end-line="269" selection-end-column="42" />
+            <state relative-caret-position="1261">
+              <caret line="259" column="57" lean-forward="true" selection-start-line="259" selection-start-column="57" selection-end-line="259" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -37,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vote-now.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="62" lean-forward="true" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+            <state relative-caret-position="91">
+              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -133,12 +132,12 @@
       <workItem from="1552383535788" duration="622000" />
       <workItem from="1552419528308" duration="826000" />
       <workItem from="1552466304376" duration="59000" />
-      <workItem from="1552469344744" duration="364000" />
+      <workItem from="1552469344744" duration="769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38561000" />
+    <option name="totallyTimeSpent" value="38966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="23" width="1400" height="837" extended-state="0" />
@@ -170,10 +169,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db.php">
+    <entry file="file://$PROJECT_DIR$/vote-results.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="269" column="42" lean-forward="true" selection-start-line="269" selection-start-column="42" selection-end-line="269" selection-end-column="42" />
+        <state relative-caret-position="405">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -184,17 +183,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vote-results.php">
+    <entry file="file://$PROJECT_DIR$/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        <state relative-caret-position="1261">
+          <caret line="259" column="57" lean-forward="true" selection-start-line="259" selection-start-column="57" selection-end-line="259" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vote-now.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="62" lean-forward="true" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+        <state relative-caret-position="91">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
         </state>
       </provider>
     </entry>
