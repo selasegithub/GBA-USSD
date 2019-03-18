@@ -30,7 +30,7 @@ if ($ussdRequest != NULL)
         case 'Initiation':
 
             $ussdResponse->Message =
-                "#GhBevAwards18 Product of the year\n Voting has ended. \n Thank you for your support." .
+                "#GhBevAwards18 Product of the year\n" . "Voting has ended \n Thank you for your support" ;
                 /*"1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";
             $ussdResponse->Type = 'Response';*/
             break;
