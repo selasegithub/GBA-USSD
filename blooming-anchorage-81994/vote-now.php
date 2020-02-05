@@ -30,17 +30,17 @@ if ($ussdRequest != NULL)
         case 'Initiation':
 
             $ussdResponse->Message =
-                "#GhBevAwards18 Product of the year\n" .
-                /*"1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
-                "Voting has ended.\n Thank you for your support.";
-            $ussdResponse->Type = 'Release';
+                "#GhBevAwards19 Product of the year\n" .
+                "1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; /* \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
+                /*"Voting has ended.\n Thank you for your support.";*/
+            $ussdResponse->Type = 'Response';
             break;
 
 
         // Response request. This is where all other interactions occur.
         // Every time the mobile subscriber responds to any of our vote options,
         // this will be the type of request we shall receive.
-       /* case 'Response':
+        case 'Response':
             switch ($ussdRequest->Sequence) {
 
                 // Menu selection. Note that everytime we receive a request
@@ -57,13 +57,13 @@ if ($ussdRequest != NULL)
                         $ussdResponse->Message = 'Invalid option.';
                         $ussdResponse->Type = 'Release';
                     }
-                    break;*/
+                    break;
 
                 // Order confirmation. Here the user has responded to our
                 // previously sent menu (i.e. Please confirm your preferred product of the year is...)
                 // Note that we saved the option the user selected in our
                 // previous dialog into the ClientState property.
-                /*case 3:
+                case 3:
                     switch ($ussdRequest->Message) {
                         case '1':
                             $db = new DB();
@@ -100,26 +100,26 @@ if ($ussdRequest != NULL)
                             break;
                     }
                     $ussdResponse->Type = "Release";
-                    break;*/
+                    break;
 
                 // Unexpected request. If the code here should ever
                 // execute, it means the request is probably forged.
-               /* default:
+               default:
                     $ussdResponse->Message = 'Unexpected request.';
                     $ussdResponse->Type = 'Release';
                     break;
             }
-            break;*/
+            break;
 
         // Session cleanup.
         // Not much to do here.
-        default:
+        /*default:
             $ussdResponse->Message =
                 "#GhBevAwards18 Product of the year\n" .
-                /*"1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
+                /*"1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*
                 "Voting has ended.\n Thank you for your support.";
             $ussdResponse->Type = 'Release';
-            break;
+            break; */
     }
 // An error has occured.
 // Probably the request JSON could not be parsed.
