@@ -1,0 +1,9 @@
+{
+	
+	"require": {
+        "ext-pdo_sqlite": "*",
+        "ext-json": "*",
+        "ext-pdo": "*",
+		"symfony/flex": "^1.2"
+   }
+}
