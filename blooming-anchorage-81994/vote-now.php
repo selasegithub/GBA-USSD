@@ -31,7 +31,7 @@ if ($ussdRequest != NULL)
 
             $ussdResponse->Message =
                 "#GhBevAwards19 Product of the year\n" .
-                "1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; /* \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
+                "1. Club Beer\n2. Alomo Bitters\n3. Kpoo Keke\n4. Verna Water\n5. ABC Golden Lager Beer\n6. Bel Active\n7. Voltic"; /* \n6. Origin Beer1 \n7. Club Beer \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
                 /*"Voting has ended.\n Thank you for your support.";*/
             $ussdResponse->Type = 'Response';
             break;
@@ -47,7 +47,7 @@ if ($ussdRequest != NULL)
                 // in a particular session, the Sequence will increase by 1.
                 // Sequence number 1 was that of the initiation request.
                 case 2:
-                    $items = array('1' => 'Kpoo Keke', '2' => 'Storm Energy Drink', '3' => 'Bel Aqua Mineral Water', '4' => 'Guinness Foreign Extra Stout', '5' => 'Club Beer', '6' => 'Vitamilk', '7' => 'Odehyie Beer'); //, '6' => 'Origin Beer1', '7' => 'Club Beer1', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
+                    $items = array('1' => 'Club Beer', '2' => 'Alomo Bitters', '3' => 'Kpoo Keke', '4' => 'Verna Water', '5' => 'ABC Golden Lager Beer', '6' => 'Bel Active', '7' => 'Voltic'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                     if (isset($items[$ussdRequest->Message])) {
                         $ussdResponse->Message = 'Please confirm your preferred product of the year is  '
                             . $items[$ussdRequest->Message] . "?\n1. Yes\n2. No";
@@ -72,7 +72,7 @@ if ($ussdRequest != NULL)
                             $phone_number = $ussdRequest->Mobile;
 
                             //Return the array number for the selected vote to be used when updated votes
-                            $items2 = array('1' => 'Kpoo Keke', '2' => 'Storm Energy Drink', '3' => 'Bel Aqua Mineral Water', '4' => 'Guinness Foreign Extra Stout', '5' => 'Club Beer', '6' => 'Vitamilk', '7' => 'Odehyie Beer'); //, '6' => 'Origin Beer1', '7' => 'Club Beer1', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
+                            $items2 = array('1' => 'Club Beer', '2' => 'Alomo Bitters', '3' => 'Kpoo Keke', '4' => 'Verna Water', '5' => 'ABC Golden Lager Beer', '6' => 'Bel Active', '7' => 'Voltic'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                             $voted_for = array_search($ussdRequest->ClientState, $items2) ;
 
                             $response = $db->save_vote($phone_number, $voted_for);
@@ -116,7 +116,7 @@ if ($ussdRequest != NULL)
         /*default:
             $ussdResponse->Message =
                 "#GhBevAwards18 Product of the year\n" .
-                /*"1. Kpoo Keke\n2. Storm Energy\n3. Bel Aqua\n4. Guinness\n5. Club Beer\n6. Vitamilk\n7. Odehyie Beer"; // \n6. Origin Beer1 \n7. Club Beer1 \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*
+                /*"1. Club Beer\n2. Alomo Bitters\n3. Kpoo Keke\n4. Guinness\n5. ABC Golden Lager Beer\n6. Bel Active\n7. Odehyie Beer"; // \n6. Origin Beer1 \n7. Club Beer \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*
                 "Voting has ended.\n Thank you for your support.";
             $ussdResponse->Type = 'Release';
             break; */
