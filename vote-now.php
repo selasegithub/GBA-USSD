@@ -31,6 +31,13 @@ if ($ussdRequest != NULL)
 
             $ussdResponse->Message =
                 "#GhBevAwards19 Product of the year\n" .
+                "Voting for Ghana Beverage Awards 2019 Product of The Year begins 2nd March 2020.\n Thank you"; /* \n6. Origin Beer1 \n7. Club Beer \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
+                /*"Voting has ended.\n Thank you for your support.";*/
+            $ussdResponse->Type = 'Release';
+            break;
+
+            $ussdResponse->Message =
+                "#GhBevAwards19 Product of the year\n" .
                 "1. Club Beer\n2. Alomo Bitters\n3. Kpoo Keke\n4. Verna Water\n5. ABC Golden Lager Beer\n6. Bel Active\n7. Voltic"; /* \n6. Origin Beer1 \n7. Club Beer \n8. Star Beer1 \n9. Guinness1 \n10. Gulder1";*/
                 /*"Voting has ended.\n Thank you for your support.";*/
             $ussdResponse->Type = 'Response';
