@@ -138,7 +138,7 @@ $port = '5432';*/
 		function get_brands() {
 			$result = $this->db->query('SELECT * FROM brands');
 
-			foreach ($result as $row)
+			/*foreach ($result as $row)
 			{
 				$brand['id'] = $row['id'];
 				$brand['name'] = $row['name'];
@@ -147,9 +147,9 @@ $port = '5432';*/
 				$brands[] = $brand;
 			}
 
-			return $brands;
+			return $brands;*/
 
-            /*if (is_array($result) || is_object($result))
+            if (is_array($result) || is_object($result))
             {
                 foreach ($result as $row)
                 {
@@ -164,7 +164,7 @@ $port = '5432';*/
             }
             else{
                 echo "Results not an array";
-            }*/
+            }
 
             /**
              * Determine if a variable is iterable. i.e. can be used to loop over.
