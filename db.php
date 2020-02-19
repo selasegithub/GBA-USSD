@@ -59,7 +59,7 @@ $port = '5432';*/
 
                 $this->db = new PDO('pgsql:host=ec2-54-197-232-203.compute-1.amazonaws.com;dbname=dfr4hedmq20d1m;user=kdyztookkckndr;port=5432;password=29846ef8b03eecd8ac209177adab65a0c73f8b3c4b92de2276dcd010b4f69539');
                 // set the PDO error mode to exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "Connected successfully";
 
 
@@ -209,7 +209,7 @@ $port = '5432';*/
             //Try catch exception to check connection to Database.
             try{
                 $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connected !";
+                //echo "Connected !";
                 //Check to see if person has already voted
                 try{
                     $stmt = "SELECT COUNT(*) FROM voters WHERE phone_number=?";
