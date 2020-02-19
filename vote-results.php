@@ -29,4 +29,5 @@
     }
     else{
         echo "Results from db not an array";
+        echo '<li>'.$brand['name'].': '.$brand['votes'].' votes</li>';
     }
