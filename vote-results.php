@@ -28,5 +28,5 @@
         }
     }
     else{
-        echo "Results not an array";
+        echo "Results from db not an array";
     }
