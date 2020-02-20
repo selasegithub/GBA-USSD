@@ -95,7 +95,7 @@ $port = '5432';*/
 
                     //Verify execution of query
                     if($rslts->execute()){
-                        echo "You have successfully run select on voters";
+                        //echo "You have successfully run select on voters";
                         while ($row = $rslts->fetch(PDO::FETCH_ASSOC)){
                             $names = $row['phone_number'];
                             $votes = $row['voted_for'];
@@ -123,16 +123,37 @@ $port = '5432';*/
 		}
 
 		function add_brand($name) {
-			// Check to make sure the brand name doesn't already exist
-			$stmt = $this->db->prepare('SELECT COUNT(*) FROM brands WHERE name=?');
-			$stmt->execute(array($name));
+            //Try catch exception to check connection to Database.
+                try{
+                    $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    //echo "Connected !";
 
-			// If not, insert it
-			if ($stmt->fetchColumn() == 0)
-			{
-				$stmt = $this->db->prepare('INSERT INTO brands (name, votes) VALUES (?, 0)');
-				$stmt->execute(array($name));
-			}
+                }  catch (PDOException $e)  {
+                    echo $e;
+                    die();
+                }
+			
+            try{
+                // Check to make sure the brand name doesn't already exist
+                $stmt = $this->db->prepare('SELECT COUNT(*) FROM brands WHERE name=?');
+                $stmt->execute(array($name));
+
+                // If not, insert it
+                if ($stmt->fetchColumn() == 0)
+                {
+                    $stmt = $this->db->prepare('INSERT INTO brands (name, votes) VALUES (?, 0)');
+                    $stmt->execute(array($name));
+                }
+                else {
+                        echo "There is some problem in insert into brands query";
+                    }
+            } catch (PDOException $e){
+                $errors = $this->db->errorInfo();
+                echo $e;
+                echo $errors;
+                die();
+            }
+			
 		}
 
 		function get_brands() {
