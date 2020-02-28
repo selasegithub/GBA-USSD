@@ -58,6 +58,9 @@ $port = '5432';*/
 
 
                 $this->db = new PDO('pgsql:host=ec2-54-197-232-203.compute-1.amazonaws.com;dbname=dfr4hedmq20d1m;user=kdyztookkckndr;port=5432;password=29846ef8b03eecd8ac209177adab65a0c73f8b3c4b92de2276dcd010b4f69539');
+                // set the PDO error mode to exception
+                $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                // echo "Connected successfully";
 
 
             }
@@ -71,8 +74,8 @@ $port = '5432';*/
 		function init() {
 		    try{
                 // Create two tables, one to store the brands being voted on and their vote counts (brands) and one to store the people that have voted (voters).
-                $this->db->exec('CREATE TABLE IF NOT EXISTS brands (id INTEGER PRIMARY KEY, name TEXT, votes INTEGER);');
-                $this->db->exec('CREATE TABLE IF NOT EXISTS voters (id INTEGER PRIMARY KEY, phone_number TEXT, voted_for INTEGER);');
+                $this->db->exec('CREATE TABLE IF NOT EXISTS brands (id SERIAL PRIMARY KEY, name TEXT, votes INTEGER);');
+                $this->db->exec('CREATE TABLE IF NOT EXISTS voters (id SERIAL PRIMARY KEY, phone_number TEXT, voted_for INTEGER);');
                 echo "Table 'brands and voters' added to the database";
 
                 //Try catch exception to check connection to Database.
@@ -92,7 +95,7 @@ $port = '5432';*/
 
                     //Verify execution of query
                     if($rslts->execute()){
-                        echo "You have successfully run select on voters";
+                        //echo "You have successfully run select on voters";
                         while ($row = $rslts->fetch(PDO::FETCH_ASSOC)){
                             $names = $row['phone_number'];
                             $votes = $row['voted_for'];
@@ -120,16 +123,37 @@ $port = '5432';*/
 		}
 
 		function add_brand($name) {
-			// Check to make sure the brand name doesn't already exist
-			$stmt = $this->db->prepare('SELECT COUNT(*) FROM brands WHERE name=?');
-			$stmt->execute(array($name));
+            //Try catch exception to check connection to Database.
+                try{
+                    $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    //echo "Connected !";
 
-			// If not, insert it
-			if ($stmt->fetchColumn() == 0)
-			{
-				$stmt = $this->db->prepare('INSERT INTO brands (name, votes) VALUES (?, 0)');
-				$stmt->execute(array($name));
-			}
+                }  catch (PDOException $e)  {
+                    echo $e;
+                    die();
+                }
+			
+            try{
+                // Check to make sure the brand name doesn't already exist
+                $stmt = $this->db->prepare('SELECT COUNT(*) FROM brands WHERE name=?');
+                $stmt->execute(array($name));
+
+                // If not, insert it
+                if ($stmt->fetchColumn() == 0)
+                {
+                    $stmt = $this->db->prepare('INSERT INTO brands (name, votes) VALUES (?, 0)');
+                    $stmt->execute(array($name));
+                }
+                else {
+                        echo "There is some problem in insert into brands query";
+                    }
+            } catch (PDOException $e){
+                $errors = $this->db->errorInfo();
+                echo $e;
+                echo $errors;
+                die();
+            }
+			
 		}
 
 		function get_brands() {
