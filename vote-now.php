@@ -4,6 +4,8 @@
  * User: kqwameselase
  * Date: 2019-02-27
  * Time: 10:29
+ *
+ * Edited by Mark on 27.01.21
  */
 date_default_timezone_set('Africa/Ghana');
 
@@ -29,18 +31,18 @@ if ($ussdRequest != NULL)
         // USSD application will receive. So let's display our main menu.
         case 'Initiation':
 
-           $ussdResponse->Message =
-                "#GhBevAwards19 Product of the year\n" .
-                "Voting for Ghana Beverage Awards 2019 Product of The Year has ended.\n Thank you for your support."; 
+           /*$ussdResponse->Message =
+                "#GhBevAwards20 Product of the year\n" .
+                "Voting for Ghana Beverage Awards 2020 Product of The Year has ended.\n Thank you for your support.";
                 
             $ussdResponse->Type = 'Release';
-            break; 
+            break; */
 
-           /* $ussdResponse->Message =
-                "#GhBevAwards19 Product of the year\n" .
+           $ussdResponse->Message =
+                "#GhBevAwards20 Product of the year\n" .
                 "1. Club Beer\n2. Alomo Bitters\n3. Kpoo Keke\n4. Verna Water\n5. ABC Golden Lager Beer\n6. Bel Active\n7. Voltic"; 
             $ussdResponse->Type = 'Response';
-            break; */
+            break;
 
 
         // Response request. This is where all other interactions occur.
