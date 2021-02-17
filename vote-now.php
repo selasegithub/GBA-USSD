@@ -24,25 +24,25 @@ $ussdRequest = json_decode(@file_get_contents('php://input'));
 // to convert the various properties (we'll set later) into JSON.
 $ussdResponse = new stdClass;
 
-// Check if no errors occured.
+// Check if no errors occurred.
 if ($ussdRequest != NULL)
     switch ($ussdRequest->Type) {
         // Initiation request. This is the first type of request every
         // USSD application will receive. So let's display our main menu.
         case 'Initiation':
 
-           /*$ussdResponse->Message =
+           $ussdResponse->Message =
                 "#GhBevAwards20 Product of the year\n" .
-                "Voting for Ghana Beverage Awards 2020 Product of The Year has ended.\n Thank you for your support.";
+                "Voting for Ghana Beverage Awards 2020 Product of The Year shall commence on 1st March.\n Thank you for your support.";
                 
             $ussdResponse->Type = 'Release';
-            break; */
+            break;
 
-           $ussdResponse->Message =
+           /*$ussdResponse->Message =
                 "#GhBevAwards20 Product of the year\n" .
                 "1. Club Beer\n2. Alomo Bitters\n3. Kpoo Keke\n4. Verna Water\n5. ABC Golden Lager Beer\n6. Bel Active\n7. Voltic"; 
             $ussdResponse->Type = 'Response';
-            break;
+            break;*/
 
 
         // Response request. This is where all other interactions occur.

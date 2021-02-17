@@ -23,23 +23,22 @@
       <path value="$PROJECT_DIR$/vendor/symfony/flex" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
-    <option name="y" value="23" />
-    <option name="width" value="1400" />
-    <option name="height" value="837" />
-  </component>
   <component name="ProjectId" id="1nfZ02JUJLUJBIpBgmS7lwxv0vc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -61,11 +60,20 @@
       <workItem from="1552469344744" duration="948000" />
       <workItem from="1552945910566" duration="1550000" />
       <workItem from="1552947735864" duration="150000" />
-      <workItem from="1611782886233" duration="1689000" />
+      <workItem from="1611782886233" duration="2239000" />
+      <workItem from="1612822993608" duration="1059000" />
+      <workItem from="1612866770230" duration="100000" />
+      <workItem from="1613558125062" duration="4633000" />
+      <workItem from="1613596939666" duration="466000" />
+      <workItem from="1613597475864" duration="83000" />
+      <workItem from="1613597596234" duration="32000" />
+      <workItem from="1613598493255" duration="47000" />
+      <workItem from="1613598670041" duration="33000" />
+      <workItem from="1613598750244" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
 </project>
