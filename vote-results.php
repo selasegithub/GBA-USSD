@@ -28,7 +28,7 @@
         foreach ($brands as $brand)
         {
             echo '<li>'.$brand['name'].': '.$brand['votes'].' votes</li>';
-            $totalVotes =+ $brand['votes'];
+            $totalVotes += $brand['votes'];
         }
 
         echo '<hr>Total vote count: '.$totalVotes.'<hr>';
