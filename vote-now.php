@@ -40,7 +40,7 @@ if ($ussdRequest != NULL)
 
             $ussdResponse->Message =
                 "#GhBevAwards20 Product of the year\n" .
-                "1. Awake Water\n2. Coca Cola\n3. Voltic Water\n4. Bel-Aqua\n5. Guinness FES\n6. Bel-Aqua Active";
+                "1. Awake Water\n2. Coca Cola\n3. Voltic Water\n4. Bel-Aqua Water\n5. Guinness FES\n6. Bel-Aqua Active";
             $ussdResponse->Type = 'Response';
             break;
 
@@ -55,7 +55,7 @@ if ($ussdRequest != NULL)
                 // in a particular session, the Sequence will increase by 1.
                 // Sequence number 1 was that of the initiation request.
                 case 2:
-                    $items = array('1' => 'Awake Water', '2' => 'Coca Cola', '3' => 'Voltic Water', '4' => 'Bel-Aqua', '5' => 'Guinness FES', '6' => 'Bel-Aqua Active'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
+                    $items = array('1' => 'Awake Water', '2' => 'Coca Cola', '3' => 'Voltic Water', '4' => 'Bel-Aqua Water', '5' => 'Guinness FES', '6' => 'Bel-Aqua Active'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                     if (isset($items[$ussdRequest->Message])) {
                         $ussdResponse->Message = 'Please confirm your preferred product of the year is  '
                             . $items[$ussdRequest->Message] . "?\n1. Yes\n2. No";
@@ -80,7 +80,7 @@ if ($ussdRequest != NULL)
                             $phone_number = $ussdRequest->Mobile;
 
                             //Return the array number for the selected vote to be used when updated votes
-                            $items2 = array('1' => 'Awake Water', '2' => 'Coca Cola', '3' => 'Voltic Water', '4' => 'Bel-Aqua', '5' => 'Guinness FES', '6' => 'Bel-Aqua Active'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
+                            $items2 = array('1' => 'Awake Water', '2' => 'Coca Cola', '3' => 'Voltic Water', '4' => 'Bel-Aqua Water', '5' => 'Guinness FES', '6' => 'Bel-Aqua Active'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                             $voted_for = array_search($ussdRequest->ClientState, $items2) ;
 
                             $response = $db->save_vote($phone_number, $voted_for);

@@ -31,7 +31,7 @@
             $totalVotes =+ $brand['votes'];
         }
 
-        echo 'Total vote count: '.$totalVotes;
+        echo '<hr>Total vote count: '.$totalVotes.'<hr>';
     }
     else{
         echo "Results from db not an array";
