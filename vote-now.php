@@ -5,7 +5,7 @@
  * Date: 2019-02-27
  * Time: 10:29
  *
- * Edited by Mark on 27.01.21
+ * Edited by Mark on 01.03.21
  */
 date_default_timezone_set('Africa/Ghana');
 
@@ -31,18 +31,18 @@ if ($ussdRequest != NULL)
         // USSD application will receive. So let's display our main menu.
         case 'Initiation':
 
-           $ussdResponse->Message =
-                "#GhBevAwards20 Product of the year\n\n".
-                "Voting for Ghana Beverage Awards 2020 Product of The Year shall commence on 1st March 2021.\n\n Thank you for your support.";
-                
-            $ussdResponse->Type = 'Release';
-            break;
+            /*$ussdResponse->Message =
+                 "#GhBevAwards20 Product of the year\n\n".
+                 "Voting for Ghana Beverage Awards 2020 Product of The Year shall commence on 1st March 2021.\n\n Thank you for your support.";
 
-           /*$ussdResponse->Message =
+             $ussdResponse->Type = 'Release';
+             break;*/
+
+            $ussdResponse->Message =
                 "#GhBevAwards20 Product of the year\n" .
-                "1. Club Beer\n2. Alomo Bitters\n3. Kpoo Keke\n4. Verna Water\n5. ABC Golden Lager Beer\n6. Bel Active\n7. Voltic"; 
+                "1. Awake Water\n2. Coca Cola\n3. Voltic Water\n4. Bel-Aqua\n5. Guinness FES\n6. Bel-Aqua Active";
             $ussdResponse->Type = 'Response';
-            break;*/
+            break;
 
 
         // Response request. This is where all other interactions occur.
@@ -55,7 +55,7 @@ if ($ussdRequest != NULL)
                 // in a particular session, the Sequence will increase by 1.
                 // Sequence number 1 was that of the initiation request.
                 case 2:
-                    $items = array('1' => 'Club Beer', '2' => 'Alomo Bitters', '3' => 'Kpoo Keke', '4' => 'Verna Water', '5' => 'ABC Golden Lager Beer', '6' => 'Bel Active', '7' => 'Voltic'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
+                    $items = array('1' => 'Awake Water', '2' => 'Coca Cola', '3' => 'Voltic Water', '4' => 'Bel-Aqua', '5' => 'Guinness FES', '6' => 'Bel-Aqua Active'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                     if (isset($items[$ussdRequest->Message])) {
                         $ussdResponse->Message = 'Please confirm your preferred product of the year is  '
                             . $items[$ussdRequest->Message] . "?\n1. Yes\n2. No";
@@ -80,7 +80,7 @@ if ($ussdRequest != NULL)
                             $phone_number = $ussdRequest->Mobile;
 
                             //Return the array number for the selected vote to be used when updated votes
-                            $items2 = array('1' => 'Club Beer', '2' => 'Alomo Bitters', '3' => 'Kpoo Keke', '4' => 'Verna Water', '5' => 'ABC Golden Lager Beer', '6' => 'Bel Active', '7' => 'Voltic'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
+                            $items2 = array('1' => 'Awake Water', '2' => 'Coca Cola', '3' => 'Voltic Water', '4' => 'Bel-Aqua', '5' => 'Guinness FES', '6' => 'Bel-Aqua Active'); //, '6' => 'Origin Beer1', '7' => 'Club Beer', '8' => 'Star Beer1', '9' => 'Guinness1', '10' => 'Gulder1');
                             $voted_for = array_search($ussdRequest->ClientState, $items2) ;
 
                             $response = $db->save_vote($phone_number, $voted_for);
@@ -112,7 +112,7 @@ if ($ussdRequest != NULL)
 
                 // Unexpected request. If the code here should ever
                 // execute, it means the request is probably forged.
-               default:
+                default:
                     $ussdResponse->Message = 'Unexpected request.';
                     $ussdResponse->Type = 'Release';
                     break;
@@ -140,5 +140,3 @@ else {
 
 header('Content-type: application/json; charset=utf-8');
 echo json_encode($ussdResponse);
-
-
