@@ -8,6 +8,9 @@
 	require_once('db.php');
 	$db = new DB();
 
+	//total vote count
+    $totalVotes = 0;
+
 	// Grab all the brands (and their vote counts) from the database
 	$brands = $db->get_brands();
 	/*echo '<ul>';*/
@@ -25,7 +28,10 @@
         foreach ($brands as $brand)
         {
             echo '<li>'.$brand['name'].': '.$brand['votes'].' votes</li>';
+            $totalVotes =+ $brand['votes'];
         }
+
+        echo 'Total vote count: '.$totalVotes;
     }
     else{
         echo "Results from db not an array";
