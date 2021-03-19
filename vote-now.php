@@ -31,14 +31,18 @@ if ($ussdRequest != NULL)
         // USSD application will receive. So let's display our main menu.
         case 'Initiation':
 
-            /*$ussdResponse->Message =
+            $ussdResponse->Message =
                  "#GhBevAwards20 Product of the year\n\n".
-                 "Voting for Ghana Beverage Awards 2020 Product of The Year shall commence on 1st March 2021.\n\n Thank you for your support.";
+                 "Voting for Ghana Beverage Awards 2020 Product of The Year has ended.\n\n Thank you for your support.";
 
              $ussdResponse->Type = 'Release';
-             break;*/
+             break;
 
-            $ussdResponse->Message =
+            /*
+             VOTING CODE STARTS HERE
+
+
+             $ussdResponse->Message =
                 "#GhBevAwards20 Product of the year\n" .
                 "1. Awake Water\n2. Coca Cola\n3. Voltic Water\n4. Bel-Aqua Water\n5. Guinness FES\n6. Bel-Aqua Active";
             $ussdResponse->Type = 'Response';
@@ -118,6 +122,10 @@ if ($ussdRequest != NULL)
                     break;
             }
             break;
+
+            VOTING CODE ENDS HERE
+            */
+
 
         // Session cleanup.
         // Not much to do here.
