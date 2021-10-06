@@ -1,0 +1,23 @@
+body{
+    font-family: "Roboto Light", sans-serif;
+}
+
+.voteItem{
+    display: block;
+    border: 1px solid white;
+    background: red;
+    color: white;
+    padding: 10px;
+}
+
+.voteItem label{
+    color: aqua;
+    font-weight: bold;
+}
+
+.btn{
+    background: red;
+    border: 1px solid green;
+    font-size: 30px;
+    color: aqua;
+}

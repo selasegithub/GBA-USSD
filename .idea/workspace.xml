@@ -2,8 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23da16f0-b60c-4999-b82c-556dfdd88d51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-voting/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-voting/brands-list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-voting/conn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-voting/prcs-vote.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-voting/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote-now.php" beforeDir="false" afterPath="$PROJECT_DIR$/vote-now.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/GBA_USSD.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/composer.phar" beforeDir="false" afterPath="$PROJECT_DIR$/composer_2.phar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/db.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/gba_ussd_app/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/gba_ussd_app/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/setup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/vote-now.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blooming-anchorage-81994/vote-results.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,12 +36,22 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer_2.phar" interpreterId="ec7bba68-4c3c-4cce-abf4-38fc92d2d839" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/symfony/flex" />
@@ -29,10 +63,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="PostgreSQL&#10;MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -79,10 +117,29 @@
       <workItem from="1614588472265" duration="4760000" />
       <workItem from="1615623213896" duration="471000" />
       <workItem from="1616124229743" duration="319000" />
+      <workItem from="1632962364672" duration="13000" />
+      <workItem from="1633031024076" duration="2903000" />
+      <workItem from="1633092421121" duration="39000" />
+      <workItem from="1633093274033" duration="7140000" />
+      <workItem from="1633295908153" duration="2581000" />
+      <workItem from="1633298527475" duration="8401000" />
+      <workItem from="1633347288220" duration="1808000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
