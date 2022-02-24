@@ -4,6 +4,12 @@
         "ext-pdo_sqlite": "*",
         "ext-json": "*",
         "ext-pdo": "*",
-		"symfony/flex": "^1.2"
-   }
+		"symfony/flex": "^1.2",
+        "php": "^7.0||^8.0"
+   },
+	"config": {
+		"allow-plugins": {
+			"symfony/flex": true
+		}
+	}
 }
