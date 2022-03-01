@@ -9,10 +9,10 @@
 <div class="contentArea">
     <?php
     require 'conn.php';
-    if($con){
+    if($db_connection){
 //    echo 'Database connected';
         //get the list of brands in the database
-        $ldBrands = pg_query($con, "SELECT name,product_id FROM brands");
+        $ldBrands = pg_query($db_connection, "SELECT name,id FROM brands");
         $numRws = pg_num_rows($ldBrands);
         if($numRws > 0){
             $brandsArr = array();
@@ -33,7 +33,7 @@
                 ?>
                 <div class="voteItem">
                     <label>
-                        <input type="radio" value="<?php echo $brandItm['product_id']; ?>" name="poty" required> <?php echo $brandItm['name']; ?>
+                        <input type="radio" value="<?php echo $brandItm['id']; ?>" name="poty" required> <?php echo $brandItm['name']; ?>
                     </label>
                 </div>
                 <?php
