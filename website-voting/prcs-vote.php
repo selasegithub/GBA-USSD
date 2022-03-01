@@ -1,7 +1,7 @@
 <?php
 require 'conn.php';
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+/*if($_SERVER['REQUEST_METHOD'] === 'POST'){*/
     
 $votedProduct = htmlentities($_POST['votedProd']);
 
@@ -51,9 +51,9 @@ if(pg_num_rows($ldProdsId) > 0){
 }else{
     echo 'Error: no products were found'; //if no products were found in the db
     exit();
-}
+}/*
 }else{
     echo 'An error occurred; http request method is not post'; //if http request method is not post
     exit();
 
-}
+}*/
