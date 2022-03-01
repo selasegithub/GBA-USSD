@@ -15,16 +15,15 @@
 	$db->init();
 
 	// Add some teams
-	$db->add_brand('Club Beer');
+	$db->add_brand('Bel Aqua Active');
 	$db->add_brand('Alomo Bitters');
-	$db->add_brand('Kpoo Keke');
+	$db->add_brand('Coca Cola');
+    $db->add_brand('Blueskies');
+    $db->add_brand('Vitamilk');
     $db->add_brand('Verna Water');
-    $db->add_brand('ABC Golden Lager Beer');
-    $db->add_brand('Bel Active');
-    $db->add_brand('Voltic');
-    /*$db->add_brand('Origin Beer1');
-    $db->add_brand('Club Beer1');
-    $db->add_brand('Star Beer1');
-    $db->add_brand('Guinness1');
-    $db->add_brand('Gulder1');*/
+    /*$db->add_brand('Bel Aqua Active2');
+    $db->add_brand('Alomo Bitters2');
+    $db->add_brand('Coca Cola2');
+    $db->add_brand('Blueskies2');
+    $db->add_brand('Vitamilk2');*/
 	echo 'Database created and brands added';

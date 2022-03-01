@@ -38,20 +38,20 @@ if(pg_num_rows($ldProdsId) > 0){
                 echo 'You successfully voted for '.$prodName['name'];
 
             }else{
-                echo 'Error'; //either there was a query error or the number of rows affected is not equal to 1
+                echo 'Error: query error or the number of rows affected is not equal to 1'; //either there was a query error or the number of rows affected is not equal to 1
             }
 
         }else{
-            echo 'Error'; //if the num rows is not equal to 1. this will not happen
+            echo 'Error: num rows is not equal to 1'; //if the num rows is not equal to 1. this will not happen
             exit();
         }
 
     }else{
-        echo 'Error'; //if the selected item does not exist
+        echo 'Error: selected item does not exist'; //if the selected item does not exist
         exit();
     }
 
 }else{
-    echo 'Error'; //if no products were found in the db
+    echo 'Error: no products were found'; //if no products were found in the db
     exit();
 }
