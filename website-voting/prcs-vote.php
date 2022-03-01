@@ -1,11 +1,8 @@
 <?php
 require 'conn.php';
 
-if($_SERVER['REQUEST_METHOD'] != 'POST'){
-    echo 'An error occurred'; //if http request method is not post
-    exit();
-}
-
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
 $votedProduct = htmlentities($_POST['votedProd']);
 
 //put all brand_id into an array and check if the selected product matches with any of the products being voted for
@@ -54,4 +51,9 @@ if(pg_num_rows($ldProdsId) > 0){
 }else{
     echo 'Error: no products were found'; //if no products were found in the db
     exit();
+}
+}else{
+    echo 'An error occurred'; //if http request method is not post
+    exit();
+
 }
