@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 $votedProduct = htmlentities($_POST['votedProd']);
 
 //put all brand_id into an array and check if the selected product matches with any of the products being voted for
-$ldProdsId = pg_query($con,"SELECT product_id FROM brands");
+$ldProdsId = pg_query($db_connection,"SELECT product_id FROM brands");
 if(pg_num_rows($ldProdsId) > 0){
 
     $prodIdArr = array();
@@ -17,7 +17,7 @@ if(pg_num_rows($ldProdsId) > 0){
     if(in_array($votedProduct,$prodIdArr)){
 
         //find the voted product by the product_id and up their vote count by 1
-        $ldVotedPrd = pg_query($con,"SELECT votes FROM brands WHERE product_id = '".$votedProduct."'");
+        $ldVotedPrd = pg_query($db_connection,"SELECT votes FROM brands WHERE product_id = '".$votedProduct."'");
         if(pg_num_rows($ldVotedPrd) == 1){
 
             $dbVoteCount = pg_fetch_array($ldVotedPrd);
@@ -25,11 +25,11 @@ if(pg_num_rows($ldProdsId) > 0){
             $voteCount++; //vote count increased by 1
 
             //now save the new vote count to the database
-            $updtVoteCount = pg_query($con,"UPDATE brands SET votes = '".$voteCount."' WHERE product_id = '".$votedProduct."'");
+            $updtVoteCount = pg_query($db_connection,"UPDATE brands SET votes = '".$voteCount."' WHERE product_id = '".$votedProduct."'");
             if($updtVoteCount && pg_affected_rows($updtVoteCount) == 1){
 
             //get the name of the product voted for
-            $getName = pg_query($con,"SELECT name FROM brands WHERE product_id = '".$votedProduct."'");
+            $getName = pg_query($db_connection,"SELECT name FROM brands WHERE product_id = '".$votedProduct."'");
                 $prodName = pg_fetch_array($getName);
 
                 echo 'You successfully voted for '.$prodName['name'];
@@ -53,7 +53,7 @@ if(pg_num_rows($ldProdsId) > 0){
     exit();
 }
 }else{
-    echo 'An error occurred'; //if http request method is not post
+    echo 'An error occurred; http request method is not post'; //if http request method is not post
     exit();
 
 }
