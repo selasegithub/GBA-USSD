@@ -8,7 +8,7 @@ $db_connection = pg_connect("host=ec2-54-197-232-203.compute-1.amazonaws.com dbn
 //echo "$db_url\n";
 
 //$db_connection = pg_connect($db_url);
-if($db_connection) {echo "connected";} else {echo "not connected";}
+//if($db_connection) {echo "connected";} else {echo "not connected";}
 /*
 $selectSql = "SELECT 1";
 $result =  pg_query($db, $selectSql);
