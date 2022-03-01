@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $voteCount++; //vote count increased by 1
 
             //now save the new vote count to the database
-            $updtVoteCount = pg_query($db_connection,"UPDATE brands SET votes = '".$voteCount."' WHERE product_id = '".$votedProduct."'");
+            $updtVoteCount = pg_query($db_connection,"UPDATE brands SET votes = '".$voteCount."' WHERE id = '".$votedProduct."'");
             if($updtVoteCount && pg_affected_rows($updtVoteCount) == 1){
 
             //get the name of the product voted for
