@@ -30,16 +30,16 @@ if ($ussdRequest != NULL)
         // Initiation request. This is the first type of request every
         // USSD application will receive. So let's display our main menu.
         case 'Initiation':
-            /*    
+               
             $ussdResponse->Message =
-                 "#GhBevAwards20 Product of the year\n\n".
-                 "Voting for Ghana Beverage Awards 2020 Product of The Year has ended.\n\n Thank you for your support.";
+                 "#GhBevAwards21 Product of the year\n\n".
+                 "Voting for Ghana Beverage Awards 2021 Product of The Year has ended.\n\n Thank you for your support.";
 
              $ussdResponse->Type = 'Release';
              break;
 
-            */
-            // VOTING CODE STARTS HERE
+            
+            /* VOTING CODE STARTS HERE
 
 
              $ussdResponse->Message =
@@ -123,7 +123,7 @@ if ($ussdRequest != NULL)
             }
             break;
 
-            //VOTING CODE ENDS HERE
+            //VOTING CODE ENDS HERE*/
             
 
 
